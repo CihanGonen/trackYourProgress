@@ -1,17 +1,7 @@
 import * as d3 from "d3";
 import "../App.css";
 
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
 function HandleQuery({ operation }) {
-  let query = useQuery();
-  let history = useHistory();
-
   const removeDelete = () => {
     setTimeout(function () {
       d3.select(".query-text-delete").remove();
