@@ -1,5 +1,4 @@
 .body-bg {
-  /*background-color: #a0ccda;*/
   background-color: #e6dbe0;
 }
 .input-bg {
@@ -40,10 +39,4 @@
 }
 .button-secondary:hover {
   background-color: #2d502a;
-}
-.display-block {
-  display: block;
-}
-.display-none {
-  display: none;
 }
