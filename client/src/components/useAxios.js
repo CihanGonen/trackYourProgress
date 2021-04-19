@@ -9,7 +9,7 @@ const useAxios = (url) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:5000/" + url,
+      url: "/" + url,
     })
       .then((res) => {
         if (res.status !== 200) {

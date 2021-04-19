@@ -52,7 +52,7 @@ function Input() {
     if (isValid) {
       const time = myFuncs.getTimePretty();
       axios
-        .post("http://localhost:5000/postExercise", {
+        .post("/postExercise", {
           author,
           exerciseName,
           exerciseType,

@@ -38,7 +38,7 @@ const ExercisePage = () => {
       const newTime = myFuncs.checkTime(time, timeArr);
       console.log(newImp);
       axios
-        .put(`http://localhost:5000/update`, {
+        .put(`/update`, {
           newImp,
           id,
           newTime,
@@ -51,7 +51,7 @@ const ExercisePage = () => {
   };
 
   const deleteExercise = (id) => {
-    axios.delete(`http://localhost:5000/delete/${id}`);
+    axios.delete(`/delete/${id}`);
   };
 
   return (
