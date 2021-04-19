@@ -157,7 +157,7 @@ const ExercisePage = () => {
                 </div>
               </div>
 
-              <div className="pt-5 mx-auto grid md:grid-cols-2 gap-5 md:w-3/4">
+              <div className="pt-5 mx-auto md:grid md:grid-cols-2 gap-5 md:w-3/4">
                 <div className="text-gray-900 mt-2 md:mt-1 chart-bg rounded-lg shadow-md">
                   <Chart
                     key={exercise._id}

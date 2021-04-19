@@ -18,6 +18,8 @@ function Chart({ improvement, type, name, author }) {
       width = svg.attr("width") - margin,
       height = svg.attr("height") - margin;
 
+    svg.attr("viewBox", "0 0 400 300");
+
     var xScale = d3.scaleBand().range([0, width]).padding(0.4),
       yScale = d3.scaleLinear().range([height, 0]);
 
@@ -26,6 +28,7 @@ function Chart({ improvement, type, name, author }) {
 
     var g = svg
       .append("g")
+      .classed("pos-g", true)
       .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
     g.append("g")
