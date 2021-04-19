@@ -33,4 +33,4 @@ class myFuncs {
   };
 }
 
-module.exports = myFuncs;
+export default myFuncs;
