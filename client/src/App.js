@@ -1,74 +1,29 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import Input from "./components/Input";
+import CardsArea from "./components/CardsArea";
+import ExercisePage from "./components/ExercisePage";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  const [name, setName] = useState("");
-  const [weight, setWeight] = useState("");
-  const [exercises, setExercises] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const Exercise = { name, weight };
-    axios({
-      url: "/api",
-      method: "POST",
-      data: Exercise,
-    })
-      .then(() => console.log("Data has been sent"))
-      .catch((err) => console.log(err));
-    setName("");
-    setWeight("");
-  };
-
-  const getExercises = () => {
-    axios("api")
-      .then((res) => {
-        const data = res.data;
-        setExercises(data);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getExercises();
-  });
-
   return (
-    <div className="App">
-      <h1>Hello</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-input">
-          <input
-            type="text"
-            name="name"
-            value={name}
-            placeholder="name"
-            onChange={(e) => setName(e.target.value)}
-          />
+    <Router>
+      <div className="App h-full">
+        <div className="p-5">
+          <Switch>
+            <Route exact path="/">
+              <div className="md:grid md:grid-cols-6 md:gap-10">
+                <Input />
+                <CardsArea />
+              </div>
+            </Route>
+            <Route path="/exercises/:id">
+              <ExercisePage></ExercisePage>
+            </Route>
+          </Switch>
         </div>
-        <div className="form-input">
-          <input
-            type="text"
-            name="weight"
-            value={weight}
-            placeholder="weight"
-            onChange={(e) => setWeight(e.target.value)}
-          />
-        </div>
-        <button>Submit</button>
-      </form>
-      <div className="blog">
-        {exercises.map((exercise, index) => {
-          return (
-            <div key={index}>
-              <h1>{exercise.name}</h1>
-              <p>{exercise.weight}</p>
-            </div>
-          );
-        })}
       </div>
-    </div>
+    </Router>
   );
 }
 

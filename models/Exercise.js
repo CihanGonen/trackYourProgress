@@ -1,14 +1,22 @@
-const ExerciseMethods = require("../repositories/exerciseRepositories");
+const mongoose = require("mongoose");
 
-class Exercise {
-  constructor(name, weight) {
-    this.name = name;
-    this.weight = weight;
-    this.time = Date.now();
-  }
+const ExerciseSchema = new mongoose.Schema({
+  author: {
+    type: String,
+    required: true,
+  },
+  exerciseName: {
+    type: String,
+    required: true,
+  },
+  exerciseType: {
+    type: String,
+    required: true,
+  },
+  improvement: [Number],
+  time: [String],
+});
 
-  saveExercise = ExerciseMethods.saveExercise;
-  static getAll = ExerciseMethods.getAll;
-}
+const ExerciseModel = mongoose.model("exercises", ExerciseSchema);
 
-module.exports = Exercise;
+module.exports = ExerciseModel;

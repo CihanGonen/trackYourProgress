@@ -1,0 +1,49 @@
+.body-bg {
+  /*background-color: #a0ccda;*/
+  background-color: #e6dbe0;
+}
+.input-bg {
+  background-color: #3d3d3d;
+}
+.cart-bg {
+  background-color: #244323;
+}
+.cart-bg:hover {
+  background-color: #152614;
+}
+.start-bg {
+  background-color: #7bb979;
+}
+.perform-bg {
+  background-color: #7bb979;
+}
+.update-bg {
+  background-color: #7bb979;
+}
+.home-button-bg {
+  background-color: #7c7c7c;
+}
+.home-button-bg:hover {
+  background-color: #474747;
+}
+.chart-bg {
+  background-color: #96c794;
+}
+.button-green {
+  background-color: #96c794;
+}
+.button-green:hover {
+  background-color: #7bb979;
+}
+.button-secondary {
+  background-color: #3b6b38;
+}
+.button-secondary:hover {
+  background-color: #2d502a;
+}
+.display-block {
+  display: block;
+}
+.display-none {
+  display: none;
+}
