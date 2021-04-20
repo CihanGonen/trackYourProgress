@@ -60,7 +60,7 @@ const ExercisePage = () => {
       {isPending && <div>Loading...</div>}
       {exercise.map((exercise) => {
         return (
-          <div>
+          <div key={exercise._id}>
             <div className="flex justify-between">
               <Link to="/">
                 <button className="focus:outline-none text-sm px-5 py-3 rounded-md font-semibold text-white home-button-bg ring-0">
@@ -172,20 +172,20 @@ const ExercisePage = () => {
                     İf you just added a new max performance please refresh page
                     to update the graph.
                   </p>
-                  <p className="pt-5">
+                  <div className="pt-5">
                     <div className="h-4 w-4 inline-block bg-red-800 mr-1"></div>
                     Means your performance decreased and you might need some
                     rest. According to researchs rest periods are as important
                     as exercise itself. Also do not forget to support your
                     exercise with nutritious meals and at least 2 liter's of
                     water every day.
-                  </p>
-                  <p className="pt-2">
+                  </div>
+                  <div className="pt-2">
                     <div className="h-4 w-4 inline-block bg-green-800 mr-1"></div>
                     Means you are doing great ! You increased your performance
                     according to last exercise. Keep up to good work and do not
                     forget to rest and eat well .
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

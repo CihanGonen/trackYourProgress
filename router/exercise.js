@@ -1,5 +1,5 @@
 const express = require("express");
-
+const path = require("path");
 const router = express.Router();
 
 const Exercise = require("../models/Exercise");
@@ -51,6 +51,17 @@ router.put("/update", async (req, res) => {
 router.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
   await Exercise.findByIdAndRemove(id).exec();
+});
+
+router.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "client", "public", "index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
 });
 
 module.exports = router;
