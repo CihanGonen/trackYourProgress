@@ -3,11 +3,11 @@ import Input from "./components/Input";
 import CardsArea from "./components/CardsArea";
 import ExercisePage from "./components/ExercisePage";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as HashRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App h-full">
         <div className="p-5">
           <Switch>
@@ -23,7 +23,7 @@ function App() {
           </Switch>
         </div>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
