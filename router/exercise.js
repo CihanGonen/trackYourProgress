@@ -19,7 +19,7 @@ router.post("/postExercise", async (req, res) => {
   });
   await exercise
     .save()
-    .then((result) => console.log(result)) //burda paylaşıldı mesajı yer alacak
+    .then((result) => console.log(result))
     .catch((err) => console.log(err));
 });
 
@@ -55,7 +55,7 @@ router.delete("/delete/:id", async (req, res) => {
 
 router.get("/*", function (req, res) {
   res.sendFile(
-    path.join(__dirname, "client", "public", "index.html"),
+    path.join(__dirname, "../", "client", "public", "index.html"),
     function (err) {
       if (err) {
         res.status(500).send(err);
